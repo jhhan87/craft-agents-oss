@@ -9,6 +9,7 @@
 
 import * as React from 'react'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { MoreHorizontal, AppWindow } from 'lucide-react'
 import {
   DropdownMenu,
@@ -148,53 +149,53 @@ interface SettingsNavigatorProps {
 
 interface SettingsItem {
   id: SettingsSubpage
-  label: string
+  labelKey: string
   icon: React.ComponentType<{ className?: string }>
-  description: string
+  descriptionKey: string
 }
 
 const settingsItems: SettingsItem[] = [
   {
     id: 'app',
-    label: 'App',
+    labelKey: 'settingsNav.app',
     icon: AppSettingsIcon,
-    description: 'Notifications, API connection, updates',
+    descriptionKey: 'settingsNav.appDesc',
   },
   {
     id: 'appearance',
-    label: 'Appearance',
+    labelKey: 'settingsNav.appearance',
     icon: AppearanceIcon,
-    description: 'Theme, font, tool icons',
+    descriptionKey: 'settingsNav.appearanceDesc',
   },
   {
     id: 'workspace',
-    label: 'Workspace',
+    labelKey: 'settingsNav.workspace',
     icon: WorkspaceIcon,
-    description: 'Model, mode cycling, advanced',
+    descriptionKey: 'settingsNav.workspaceDesc',
   },
   {
     id: 'permissions',
-    label: 'Permissions',
+    labelKey: 'settingsNav.permissions',
     icon: ShieldIcon,
-    description: 'Allowed commands in Explore mode',
+    descriptionKey: 'settingsNav.permissionsDesc',
   },
   {
     id: 'labels',
-    label: 'Labels',
+    labelKey: 'settingsNav.labels',
     icon: LabelsIcon,
-    description: 'Label hierarchy and auto-apply rules',
+    descriptionKey: 'settingsNav.labelsDesc',
   },
   {
     id: 'shortcuts',
-    label: 'Shortcuts',
+    labelKey: 'settingsNav.shortcuts',
     icon: KeyboardIcon,
-    description: 'Keyboard shortcuts reference',
+    descriptionKey: 'settingsNav.shortcutsDesc',
   },
   {
     id: 'preferences',
-    label: 'Preferences',
+    labelKey: 'settingsNav.preferences',
     icon: PreferencesIcon,
-    description: 'Your personal preferences',
+    descriptionKey: 'settingsNav.preferencesDesc',
   },
 ]
 
@@ -210,6 +211,7 @@ interface SettingsItemRowProps {
  * Tracks menu open state to keep "..." button visible when menu is open
  */
 function SettingsItemRow({ item, isSelected, isFirst, onSelect }: SettingsItemRowProps) {
+  const { t } = useTranslation()
   const [menuOpen, setMenuOpen] = useState(false)
   const Icon = item.icon
 
@@ -260,10 +262,10 @@ function SettingsItemRow({ item, isSelected, isFirst, onSelect }: SettingsItemRo
                 isSelected ? 'text-foreground' : 'text-foreground/80'
               )}
             >
-              {item.label}
+              {t(item.labelKey)}
             </span>
             <span className="text-xs text-foreground/60 line-clamp-1">
-              {item.description}
+              {t(item.descriptionKey)}
             </span>
           </div>
         </button>
@@ -285,7 +287,7 @@ function SettingsItemRow({ item, isSelected, isFirst, onSelect }: SettingsItemRo
                 <DropdownMenuProvider>
                   <StyledDropdownMenuItem onClick={handleOpenInNewWindow}>
                     <AppWindow className="h-3.5 w-3.5" />
-                    <span className="flex-1">Open in New Window</span>
+                    <span className="flex-1">{t('common.openInNewWindow')}</span>
                   </StyledDropdownMenuItem>
                 </DropdownMenuProvider>
               </StyledDropdownMenuContent>

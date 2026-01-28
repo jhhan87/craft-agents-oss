@@ -157,7 +157,10 @@ export {
 export {
   getDocUrl,
   getDocInfo,
+  getLocalizedDocInfo,
+  getDocTranslationKeys,
   DOCS,
   type DocFeature,
   type DocInfo,
+  type TranslateFunction,
 } from './doc-links.ts';
