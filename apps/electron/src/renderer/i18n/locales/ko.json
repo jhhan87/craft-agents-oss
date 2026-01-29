@@ -46,7 +46,9 @@
   },
   "settingsNav": {
     "app": "앱",
-    "appDesc": "외관, 알림, API 연결",
+    "appDesc": "알림, API 연결, 업데이트",
+    "appearance": "외관",
+    "appearanceDesc": "테마, 글꼴, 언어, 도구 아이콘",
     "workspace": "워크스페이스",
     "workspaceDesc": "모델, 모드 순환, 고급",
     "permissions": "권한",
@@ -57,6 +59,14 @@
     "shortcutsDesc": "키보드 단축키 참조",
     "preferences": "환경설정",
     "preferencesDesc": "개인 환경설정"
+  },
+  "appearanceSettings": {
+    "title": "외관",
+    "theme": "테마",
+    "toolIcons": "도구 아이콘",
+    "toolIconsDesc": "채팅 활동에서 CLI 명령 옆에 표시되는 아이콘입니다. ~/.craft-agent/tool-icons/에 저장됩니다.",
+    "searchTools": "도구 검색...",
+    "noToolIcons": "도구 아이콘 매핑을 찾을 수 없습니다"
   },
   "labelsSettings": {
     "title": "라벨",

@@ -46,7 +46,9 @@
   },
   "settingsNav": {
     "app": "App",
-    "appDesc": "Appearance, notifications, API connection",
+    "appDesc": "Notifications, API connection, updates",
+    "appearance": "Appearance",
+    "appearanceDesc": "Theme, font, language, tool icons",
     "workspace": "Workspace",
     "workspaceDesc": "Model, mode cycling, advanced",
     "permissions": "Permissions",
@@ -57,6 +59,14 @@
     "shortcutsDesc": "Keyboard shortcuts reference",
     "preferences": "Preferences",
     "preferencesDesc": "Your personal preferences"
+  },
+  "appearanceSettings": {
+    "title": "Appearance",
+    "theme": "Theme",
+    "toolIcons": "Tool Icons",
+    "toolIconsDesc": "Icons shown next to CLI commands in chat activity. Stored in ~/.craft-agent/tool-icons/.",
+    "searchTools": "Search tools...",
+    "noToolIcons": "No tool icon mappings found"
   },
   "labelsSettings": {
     "title": "Labels",
